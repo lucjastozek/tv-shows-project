@@ -5,15 +5,17 @@
 // the episode's medium-sized image
 // the episode's summary text (see below)
 
-import { IEpisode } from "../utils/IEpisode"
+import { IEpisode } from "../utils/IEpisode";
 
 function Episode(oneEpisode: IEpisode): JSX.Element {
-    return <div>
-        <p>{oneEpisode.name}</p>
-        <p>S03E</p>
-        <img src={oneEpisode.image.medium} alt={oneEpisode.name}/>
-        {oneEpisode.summary}
-    </div>
+    return (
+        <div>
+            <p>{oneEpisode.name}</p>
+            <p>S03E</p>
+            <img src={oneEpisode.image.medium} alt={oneEpisode.name} />
+            {oneEpisode.summary}
+        </div>
+    );
 }
 
-export {Episode}
+export { Episode };

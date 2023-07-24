@@ -11,9 +11,9 @@ export interface IEpisode {
     rating: { average: number };
     runtime: number;
     image: {
-      medium: string;
-      original: string;
+        medium: string;
+        original: string;
     };
     summary: string;
     _links: { self: { href: string } };
-  }
+}
