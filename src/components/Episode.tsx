@@ -6,14 +6,19 @@
 // the episode's summary text (see below)
 
 import { IEpisode } from "../utils/IEpisode";
+import { generateEpisodeCode } from "../utils/generateEpisodeCode";
 
-function Episode(oneEpisode: IEpisode): JSX.Element {
+interface EpisodeProps {
+    oneEpisode: IEpisode;
+}
+
+function Episode({ oneEpisode }: EpisodeProps): JSX.Element {
     return (
         <div>
             <p>{oneEpisode.name}</p>
-            <p>S03E</p>
+            <p>{generateEpisodeCode(oneEpisode.season, oneEpisode.number)}</p>
             <img src={oneEpisode.image.medium} alt={oneEpisode.name} />
-            {oneEpisode.summary}
+            <p>{oneEpisode.summary}</p>
         </div>
     );
 }
