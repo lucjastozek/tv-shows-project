@@ -7,6 +7,7 @@
 
 import { IEpisode } from "../utils/IEpisode";
 import { generateEpisodeCode } from "../utils/generateEpisodeCode";
+import { removeTagsFromSummary } from "../utils/removeTagsFromSummary";
 
 interface EpisodeProps {
     oneEpisode: IEpisode;
@@ -18,7 +19,7 @@ function Episode({ oneEpisode }: EpisodeProps): JSX.Element {
             <p>{oneEpisode.name}</p>
             <p>{generateEpisodeCode(oneEpisode.season, oneEpisode.number)}</p>
             <img src={oneEpisode.image.medium} alt={oneEpisode.name} />
-            <p>{oneEpisode.summary}</p>
+            <p>{removeTagsFromSummary(oneEpisode.summary)}</p>
         </div>
     );
 }
