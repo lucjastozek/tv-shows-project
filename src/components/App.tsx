@@ -1,11 +1,11 @@
 import "./App.css";
 import episodes from "../episodes.json";
-import { Episode } from "./Episode";
+import { EpisodeList } from "./EpisodeList";
 
 function App() {
     return (
         <div className="App">
-            <Episode oneEpisode={episodes[0]} />
+            <EpisodeList episodes={episodes} />
         </div>
     );
 }
