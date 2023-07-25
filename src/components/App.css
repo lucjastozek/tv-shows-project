@@ -3,6 +3,10 @@ html {
     font-family: "Open Sans", sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 h1 {
     text-transform: uppercase;
     text-align: center;
@@ -36,4 +40,18 @@ h1 {
     padding: 16px;
     background-color: #fdfcdc;
     border-radius: 10px;
+}
+
+footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    padding: 12px;
+    background-color: #0081a7;
+    color: white;
+    text-align: center;
+}
+
+footer > a {
+    color: white;
 }
