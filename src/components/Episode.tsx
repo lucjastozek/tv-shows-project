@@ -15,11 +15,15 @@ interface EpisodeProps {
 
 function Episode({ oneEpisode }: EpisodeProps): JSX.Element {
     return (
-        <div>
-            <p>{oneEpisode.name}</p>
-            <p>{generateEpisodeCode(oneEpisode.season, oneEpisode.number)}</p>
-            <img src={oneEpisode.image.medium} alt={oneEpisode.name} />
-            <p>{removeTagsFromSummary(oneEpisode.summary)}</p>
+        <div className="episode">
+            <div className="episode-header">
+                {oneEpisode.name} -{" "}
+                {generateEpisodeCode(oneEpisode.season, oneEpisode.number)}
+            </div>
+            <div className="episode-content">
+                <img src={oneEpisode.image.medium} alt={oneEpisode.name} />
+                <p>{removeTagsFromSummary(oneEpisode.summary)}</p>
+            </div>
         </div>
     );
 }

@@ -7,11 +7,11 @@ interface EpisodeListProps {
 
 function EpisodeList({ episodes }: EpisodeListProps): JSX.Element {
     return (
-        <>
+        <div className="episode-list">
             {episodes.map((oneEpisode) => (
                 <Episode key={oneEpisode.id} oneEpisode={oneEpisode} />
             ))}
-        </>
+        </div>
     );
 }
 
