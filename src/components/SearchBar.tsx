@@ -12,11 +12,12 @@ interface SearchBarProps {
 function SearchBar({
     inpVal,
     setInpVal,
+    displayedEpisodes,
     setDisplayedEpisodes,
     listOfAllEpisodes,
 }: SearchBarProps): JSX.Element {
     return (
-        <>
+        <div className="top-bar">
             <input
                 type="text"
                 placeholder="Search for a episode here..."
@@ -28,7 +29,11 @@ function SearchBar({
                     );
                 }}
             ></input>
-        </>
+            <p className="white-font">
+                Displaying {displayedEpisodes.length}/{listOfAllEpisodes.length}{" "}
+                episodes
+            </p>
+        </div>
     );
 }
 

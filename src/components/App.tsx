@@ -14,14 +14,16 @@ function App() {
 
     return (
         <div className="App">
-            <PageHeader />
-            <SearchBar
-                inpVal={inpVal}
-                setInpVal={setInpVal}
-                displayedEpisodes={displayedEpisodes}
-                setDisplayedEpisodes={setDisplayedEpisodes}
-                listOfAllEpisodes={episodes}
-            />
+            <div className="dark-blue-bg">
+                <PageHeader />
+                <SearchBar
+                    inpVal={inpVal}
+                    setInpVal={setInpVal}
+                    displayedEpisodes={displayedEpisodes}
+                    setDisplayedEpisodes={setDisplayedEpisodes}
+                    listOfAllEpisodes={episodes}
+                />
+            </div>
             <EpisodeList episodes={displayedEpisodes} />
             <PageFooter />
         </div>
