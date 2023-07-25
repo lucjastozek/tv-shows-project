@@ -10,7 +10,35 @@ body {
 h1 {
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 2rem;
+    padding: 2.25rem 0;
+    margin-top: 0;
+    color: white;
+    font-size: 3rem;
+}
+
+input {
+    background-color: #fdfcdc;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: light;
+    color: black;
+    padding: 8px;
+    min-width: 400px;
+    margin-left: 120px;
+    margin-right: 16px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #0081a7;
+    padding-bottom: 32px;
 }
 
 .episode-list {
@@ -54,4 +82,14 @@ footer {
 
 footer > a {
     color: white;
+}
+
+.dark-blue-bg {
+    background-color: #0081a7;
+}
+
+.white-font {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0;
 }
