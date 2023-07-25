@@ -1,6 +1,6 @@
 function removeTagsFromSummary(summary: string): string {
-    let cleanedSummary = summary.split("<p>");
-    cleanedSummary = cleanedSummary.join("").split("</p>");
+    let cleanedSummary = summary.split(/<[a-z]+>/);
+    cleanedSummary = cleanedSummary.join("").split(/<\/[a-z]+>/);
 
     return cleanedSummary.join("");
 }
