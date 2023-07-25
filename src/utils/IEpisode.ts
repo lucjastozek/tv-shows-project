@@ -8,12 +8,12 @@ export interface IEpisode {
     airdate: string;
     airtime: string;
     airstamp: string;
-    rating: { average: number };
+    rating: { average: number | null };
     runtime: number;
-    image: {
+    image: null | {
         medium: string;
         original: string;
     };
-    summary: string;
+    summary: string | null;
     _links: { self: { href: string } };
 }
