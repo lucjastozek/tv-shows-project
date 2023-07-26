@@ -3,8 +3,8 @@ import { compareShowsAlphabetically } from "../utils/compareShowsAlphabetically"
 
 interface ShowSelectorProps {
     shows: IShow[];
-    selectedShow: string;
-    setSelectedShow: React.Dispatch<React.SetStateAction<string>>;
+    selectedShow: number;
+    setSelectedShow: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function ShowSelector({
@@ -19,14 +19,16 @@ function ShowSelector({
     return (
         <>
             <select
-                value={selectedShow}
-                onChange={(e) => setSelectedShow(e.target.value)}
+                onChange={(e) => setSelectedShow(parseInt(e.target.value))}
+                defaultValue={selectedShow}
             >
-                {orderedShows.map((oneShow: IShow) => (
-                    <option value={oneShow.name} key={oneShow.id}>
-                        {oneShow.name}
-                    </option>
-                ))}
+                {orderedShows.map((oneShow: IShow) => {
+                    return (
+                        <option value={oneShow.id} key={oneShow.id}>
+                            {oneShow.name}
+                        </option>
+                    );
+                })}
             </select>
         </>
     );

@@ -16,21 +16,22 @@ function App() {
     const [episodes, setEpisodes] = useState<IEpisode[]>([]);
     const [displayedEpisodes, setDisplayedEpisodes] =
         useState<IEpisode[]>(episodes);
-    const [selectedShow, setSelectedShow] = useState<string>("Adventure Time");
+    const [selectedShow, setSelectedShow] = useState<number>(460);
     useEffect(() => {
         async function fetchEpisodes() {
             const response = await fetch(
-                "https://api.tvmaze.com/shows/82/episodes"
+                `https://api.tvmaze.com/shows/${selectedShow}/episodes`
             );
             const jsonBody: IEpisode[] = await response.json();
             setEpisodes(jsonBody.filter(isEpisodeValid));
         }
 
         fetchEpisodes();
-    }, []);
+    }, [selectedShow]);
 
     useEffect(() => setDisplayedEpisodes(episodes), [episodes]);
 
+    useEffect(() => console.log(selectedShow), [selectedShow]);
     return (
         <div className="App">
             <div className="dark-blue-bg">
