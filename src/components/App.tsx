@@ -7,13 +7,16 @@ import { SearchBar } from "./SearchBar";
 import { IEpisode } from "../utils/IEpisode";
 import { isEpisodeValid } from "../utils/isEpisodeValid";
 import { useState, useEffect } from "react";
+import shows from "../shows.json";
+import { ShowSelector } from "./ShowSelector";
+import { IShow } from "../utils/IShow";
 
 function App() {
     const [inpVal, setInpVal] = useState("");
     const [episodes, setEpisodes] = useState<IEpisode[]>([]);
     const [displayedEpisodes, setDisplayedEpisodes] =
         useState<IEpisode[]>(episodes);
-
+    const [selectedShow, setSelectedShow] = useState<string>("Adventure Time");
     useEffect(() => {
         async function fetchEpisodes() {
             const response = await fetch(
@@ -32,6 +35,11 @@ function App() {
         <div className="App">
             <div className="dark-blue-bg">
                 <PageHeader />
+                <ShowSelector
+                    shows={shows as IShow[]}
+                    selectedShow={selectedShow}
+                    setSelectedShow={setSelectedShow}
+                />
                 <SearchBar
                     inpVal={inpVal}
                     setInpVal={setInpVal}
