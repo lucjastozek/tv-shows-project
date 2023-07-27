@@ -1,5 +1,7 @@
 import { IEpisode } from "../utils/IEpisode";
 import { filterEpisodes } from "../utils/filterEpisodes";
+import { ShowSelector } from "./ShowSelector";
+import { IShow } from "../utils/IShow";
 
 interface SearchBarProps {
     inpVal: string;
@@ -7,6 +9,9 @@ interface SearchBarProps {
     displayedEpisodes: IEpisode[];
     setDisplayedEpisodes: React.Dispatch<React.SetStateAction<IEpisode[]>>;
     listOfAllEpisodes: IEpisode[];
+    shows: IShow[];
+    selectedShowID: number;
+    setSelectedShowID: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function SearchBar({
@@ -15,9 +20,17 @@ function SearchBar({
     displayedEpisodes,
     setDisplayedEpisodes,
     listOfAllEpisodes,
+    shows,
+    selectedShowID,
+    setSelectedShowID,
 }: SearchBarProps): JSX.Element {
     return (
         <div className="top-bar">
+            <ShowSelector
+                shows={shows as IShow[]}
+                selectedShowID={selectedShowID}
+                setSelectedShowID={setSelectedShowID}
+            />
             <input
                 type="text"
                 placeholder="Search for a episode here..."

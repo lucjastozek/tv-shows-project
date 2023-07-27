@@ -3,14 +3,14 @@ import { compareShowsAlphabetically } from "../utils/compareShowsAlphabetically"
 
 interface ShowSelectorProps {
     shows: IShow[];
-    selectedShow: number;
-    setSelectedShow: React.Dispatch<React.SetStateAction<number>>;
+    selectedShowID: number;
+    setSelectedShowID: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function ShowSelector({
     shows,
-    selectedShow,
-    setSelectedShow,
+    selectedShowID,
+    setSelectedShowID,
 }: ShowSelectorProps): JSX.Element {
     const orderedShows = shows.sort((a, b) =>
         compareShowsAlphabetically(a.name, b.name)
@@ -19,8 +19,8 @@ function ShowSelector({
     return (
         <>
             <select
-                onChange={(e) => setSelectedShow(parseInt(e.target.value))}
-                defaultValue={selectedShow}
+                onChange={(e) => setSelectedShowID(parseInt(e.target.value))}
+                defaultValue={selectedShowID}
             >
                 {orderedShows.map((oneShow: IShow) => {
                     return (
