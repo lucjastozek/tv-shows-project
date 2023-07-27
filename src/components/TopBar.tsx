@@ -7,7 +7,6 @@ interface TopBarProps {
     inpVal: string;
     setInpVal: React.Dispatch<React.SetStateAction<string>>;
     displayedEpisodes: IEpisode[];
-    setDisplayedEpisodes: React.Dispatch<React.SetStateAction<IEpisode[]>>;
     listOfAllEpisodes: IEpisode[];
     shows: IShow[];
     selectedShowID: number;
@@ -18,7 +17,6 @@ function TopBar({
     inpVal,
     setInpVal,
     displayedEpisodes,
-    setDisplayedEpisodes,
     listOfAllEpisodes,
     shows,
     selectedShowID,
@@ -31,12 +29,7 @@ function TopBar({
                 selectedShowID={selectedShowID}
                 setSelectedShowID={setSelectedShowID}
             />
-            <SearchBar
-                inpVal={inpVal}
-                setInpVal={setInpVal}
-                setDisplayedEpisodes={setDisplayedEpisodes}
-                listOfAllEpisodes={listOfAllEpisodes}
-            />
+            <SearchBar inpVal={inpVal} setInpVal={setInpVal} />
             <p className="white-font">
                 Displaying {displayedEpisodes.length}/{listOfAllEpisodes.length}{" "}
                 episodes

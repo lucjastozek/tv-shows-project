@@ -9,6 +9,7 @@ import { isEpisodeValid } from "../utils/isEpisodeValid";
 import { useState, useEffect } from "react";
 import shows from "../shows.json";
 import { IShow } from "../utils/IShow";
+import { filterEpisodes } from "../utils/filterEpisodes";
 
 function App() {
     const [inpVal, setInpVal] = useState("");
@@ -28,7 +29,10 @@ function App() {
         fetchEpisodes();
     }, [selectedShowID]);
 
-    useEffect(() => setDisplayedEpisodes(episodes), [episodes]);
+    useEffect(
+        () => setDisplayedEpisodes(filterEpisodes(inpVal, episodes)),
+        [episodes, inpVal]
+    );
 
     useEffect(() => console.log(selectedShowID), [selectedShowID]);
     return (
@@ -39,7 +43,6 @@ function App() {
                     inpVal={inpVal}
                     setInpVal={setInpVal}
                     displayedEpisodes={displayedEpisodes}
-                    setDisplayedEpisodes={setDisplayedEpisodes}
                     listOfAllEpisodes={episodes}
                     shows={shows as IShow[]}
                     selectedShowID={selectedShowID}
