@@ -3,7 +3,7 @@ import "./App.css";
 import { EpisodeList } from "./EpisodeList";
 import { PageHeader } from "./PageHeader";
 import { PageFooter } from "./PageFooter";
-import { SearchBar } from "./SearchBar";
+import { TopBar } from "./TopBar";
 import { IEpisode } from "../utils/IEpisode";
 import { isEpisodeValid } from "../utils/isEpisodeValid";
 import { useState, useEffect } from "react";
@@ -35,7 +35,7 @@ function App() {
         <div className="App">
             <div className="dark-blue-bg">
                 <PageHeader />
-                <SearchBar
+                <TopBar
                     inpVal={inpVal}
                     setInpVal={setInpVal}
                     displayedEpisodes={displayedEpisodes}
