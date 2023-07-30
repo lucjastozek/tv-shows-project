@@ -2,6 +2,7 @@ import { IEpisode } from "../utils/IEpisode";
 import { ShowSelector } from "./ShowSelector";
 import { IShow } from "../utils/IShow";
 import { SearchBar } from "./SearchBar";
+import { EpisodeCounter } from "./EpisodeCounter";
 
 interface TopBarProps {
     inpVal: string;
@@ -30,10 +31,10 @@ function TopBar({
                 setSelectedShowID={setSelectedShowID}
             />
             <SearchBar inpVal={inpVal} setInpVal={setInpVal} />
-            <p className="white-font">
-                Displaying {displayedEpisodes.length}/{listOfAllEpisodes.length}{" "}
-                episodes
-            </p>
+            <EpisodeCounter
+                displayedEpisodes={displayedEpisodes}
+                listOfAllEpisodes={listOfAllEpisodes}
+            />
         </div>
     );
 }

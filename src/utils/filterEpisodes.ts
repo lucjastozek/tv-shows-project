@@ -1,4 +1,3 @@
-// Display how many episodes match the current search
 import { IEpisode } from "./IEpisode";
 
 function filterEpisodes(
