@@ -1,4 +1,5 @@
 # TV Shows Project
+![ezgif com-video-to-gif-2](https://github.com/lucjastozek/tv-shows-project/assets/66007323/d81d397a-b8b6-4ce0-890e-7140aeffb8a2)
 
 ## Installation
 
