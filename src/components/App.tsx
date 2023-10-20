@@ -1,15 +1,8 @@
-import { MyComponent } from "./MyComponent";
 import "./App.css";
-import { greet } from "../greet";
+import TVShowsApp from "./TVShowApp";
 
 function App() {
-    return (
-        <div className="App">
-            <MyComponent />
-
-            {greet("World")}
-        </div>
-    );
+    return <TVShowsApp />;
 }
 
 export default App;

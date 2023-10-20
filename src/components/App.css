@@ -1,3 +1,96 @@
 html {
-    background: #f8f8f8;
+    background: #b2dfdf;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2.25rem 0;
+    margin-top: 0;
+    color: white;
+    font-size: 3rem;
+}
+
+input,
+select {
+    background-color: #fdfcdc;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: light;
+    color: black;
+    padding: 8px;
+    min-width: 400px;
+    margin-right: 16px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #0081a7;
+    padding-bottom: 32px;
+}
+
+.episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.episode {
+    width: 340px;
+    margin: 25px;
+    background-color: #fdfcdc;
+    border-radius: 10px;
+}
+
+.episode-header {
+    text-align: center;
+    background-color: #fed9b7;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.episode-content {
+    text-align: center;
+    padding: 16px;
+    background-color: #fdfcdc;
+    border-radius: 10px;
+}
+
+footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    padding: 12px;
+    background-color: #0081a7;
+    color: white;
+    text-align: center;
+}
+
+footer > a {
+    color: white;
+}
+
+.dark-blue-bg {
+    background-color: #0081a7;
+}
+
+.white-font {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0;
 }
